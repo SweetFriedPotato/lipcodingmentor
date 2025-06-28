@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { User, SignupRequest, LoginRequest, LoginResponse, ProfileUpdateRequest, MatchRequest, MatchRequestCreate } from '../types';
 
-const API_BASE_URL = 'http://localhost:8000/api';
+const API_BASE_URL = 'http://localhost:8080/api';
 
 const api = axios.create({
   baseURL: API_BASE_URL,

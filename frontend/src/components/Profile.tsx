@@ -127,9 +127,15 @@ const Profile: React.FC = () => {
           <div className="form-group">
             <img
               id="profile-photo"
-              src={`http://localhost:8000${user.profile.imageUrl}`}
+              src={`http://localhost:8080${user.profile.imageUrl}`}
               alt="프로필"
               className="profile-photo"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = user.role === 'mentor' 
+                  ? 'https://placehold.co/500x500.jpg?text=MENTOR'
+                  : 'https://placehold.co/500x500.jpg?text=MENTEE';
+              }}
             />
           </div>
           

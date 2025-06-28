@@ -26,14 +26,14 @@ const PublicRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     return <div>로딩 중...</div>;
   }
   
-  return user ? <Navigate to="/profile" /> : <>{children}</>;
+  return user ? <Navigate to="/mentors" /> : <>{children}</>;
 };
 
 const Home: React.FC = () => {
   const { user } = useAuth();
   
   if (user) {
-    return <Navigate to="/profile" />;
+    return <Navigate to="/mentors" />;
   } else {
     return <Navigate to="/login" />;
   }

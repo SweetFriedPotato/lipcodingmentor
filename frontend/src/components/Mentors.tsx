@@ -113,9 +113,13 @@ const Mentors: React.FC = () => {
         {mentors.map((mentor) => (
           <div key={mentor.id} className="mentor">
             <img
-              src={`http://localhost:8000${mentor.profile.imageUrl}`}
+              src={`http://localhost:8080${mentor.profile.imageUrl}`}
               alt={mentor.profile.name}
               className="mentor-image"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = 'https://placehold.co/500x500.jpg?text=MENTOR';
+              }}
             />
             <h3>{mentor.profile.name}</h3>
             <p>{mentor.profile.bio}</p>
